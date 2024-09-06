@@ -1,0 +1,5 @@
+.graddle
+.vscode
+.DS_Store
+bin/
+build/
