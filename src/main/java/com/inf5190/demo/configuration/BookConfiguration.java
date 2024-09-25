@@ -1,4 +1,4 @@
-package com.inf5190.demo.books.configuration;
+package com.inf5190.demo.configuration;
 
 import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.beans.factory.annotation.Value;

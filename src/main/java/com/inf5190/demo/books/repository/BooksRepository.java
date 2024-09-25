@@ -59,7 +59,7 @@ public class BooksRepository {
             int count) {
         Comparator<Book> bookComparator = getComparator(field);
         return this.books.values().stream().sorted(
-                direction == OrderDirection.ASC ? bookComparator : bookComparator.reversed())
+                direction == OrderDirection.asc ? bookComparator : bookComparator.reversed())
                 .skip(offset).limit(count).toList();
 
     }
@@ -94,9 +94,9 @@ public class BooksRepository {
             @Override
             public int compare(Book b0, Book b1) {
                 return switch (field) {
-                    case ID -> Long.compare(b0.id(), b1.id());
-                    case TITLE -> b0.title().compareTo(b1.title());
-                    case AUTHOR -> b0.author().compareTo(b1.author());
+                    case id -> Long.compare(b0.id(), b1.id());
+                    case title -> b0.title().compareTo(b1.title());
+                    case author -> b0.author().compareTo(b1.author());
                     default -> throw new RuntimeException();
                 };
             }
